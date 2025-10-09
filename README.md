@@ -33,6 +33,8 @@
 
 ***Для финансовых и рабочих сервисов***
 
+<img width="563" height="531" alt="image" src="https://github.com/user-attachments/assets/19be632c-c471-48fb-9d30-de1bcda9fa61" />
+
 
 
 
