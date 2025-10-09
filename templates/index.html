@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор паролей</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1> Генератор паролей</h1>
+
+        <form id="passwordForm">
+            <div class="form-group">
+                <label for="length">Длина пароля:</label>
+                <input type="number" id="length" name="length" value="12" min="4" max="50">
+            </div>
+
+            <div class="form-group">
+                <label>Типы символов:</label>
+                <div class="checkboxes">
+                    <label>
+                        <input type="checkbox" name="uppercase" checked>
+                        Заглавные буквы
+                    </label>
+                    <label>
+                        <input type="checkbox" name="numbers" checked>
+                        Цифры
+                    </label>
+                    <label>
+                        <input type="checkbox" name="special" checked>
+                        Спецсимволы
+                    </label>
+                </div>
+            </div>
+
+            <button type="submit" class="btn">Сгенерировать пароль</button>
+        </form>
+
+        <div id="result" class="result hidden">
+            <h3>Ваш пароль:</h3>
+            <div class="password-display">
+                <span id="passwordText"></span>
+            </div>
+            <p class="password-info">Длина: <span id="passwordLength">0</span> символов</p>
+        </div>
+
+        <div id="error" class="error hidden"></div>
+    </div>
+
+    <script>
+        document.getElementById('passwordForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+
+            fetch('/generate', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById('passwordText').textContent = data.password;
+                    document.getElementById('passwordLength').textContent = data.length;
+                    document.getElementById('result').classList.remove('hidden');
+                    document.getElementById('error').classList.add('hidden');
+                } else {
+                    showError(data.error);
+                }
+            })
+            .catch(error => {
+                showError('Ошибка при генерации пароля');
+            });
+        });
+
+        function showError(message) {
+            document.getElementById('error').textContent = message;
+            document.getElementById('error').classList.remove('hidden');
+            document.getElementById('result').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>

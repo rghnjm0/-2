@@ -1,0 +1,80 @@
+body {
+    font-family: Arial;
+    background: #667eea;
+    padding: 10px;
+}
+
+.container {
+    width: 500px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+.checkboxes label {
+    display: block;
+    margin: 5px 0;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    background: #667eea;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.result {
+    margin-top: 20px;
+    padding: 10px;
+    background: #f0f0f0;
+}
+
+.password-display {
+    padding: 10px;
+    background: white;
+    border: 1px solid #ccc;
+    margin: 10px 0;
+}
+
+#passwordText {
+    font-family: monospace;
+}
+
+.password-info {
+    color: #666;
+    font-size: 14px;
+}
+
+.error {
+    margin-top: 15px;
+    padding: 10px;
+    background: #ffcccc;
+    color: red;
+}
+
+.hidden {
+    display: none;
+}
