@@ -73,7 +73,8 @@
 
 ***Генерируйте - создавайте безопасные пароли одним кликом***
 
-<img width="563" height="531" alt="image" src="https://github.com/user-attachments/assets/19be632c-c471-48fb-9d30-de1bcda9fa61" />
+<img width="948" height="496" alt="image" src="https://github.com/user-attachments/assets/a458de8f-e00c-4550-8996-d116f4365c1d" />
+<img width="850" height="489" alt="image" src="https://github.com/user-attachments/assets/515d5bb3-4880-430a-8985-9996ded14f09" />
 
 
 
