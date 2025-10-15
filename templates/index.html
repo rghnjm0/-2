@@ -8,7 +8,13 @@
 </head>
 <body>
     <div class="container">
-        <h1> Генератор паролей</h1>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h1>Генератор паролей</h1>
+            <div>
+                <span>Привет, {{ username }}!</span>
+                <a href="{{ url_for('logout') }}" style="margin-left: 10px;">Выйти</a>
+            </div>
+        </div>
 
         <form id="passwordForm">
             <div class="form-group">
